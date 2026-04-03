@@ -1,0 +1,78 @@
+{
+  "name": "Payroll",
+  "type": "object",
+  "properties": {
+    "employee_id": {
+      "type": "string",
+      "title": "\u5de5\u53f7(Employee ID)"
+    },
+    "employee_name": {
+      "type": "string",
+      "title": "\u59d3\u540d(Name)"
+    },
+    "daily_rate": {
+      "type": "number",
+      "title": "\u65e5\u85aa(Daily Rate)"
+    },
+    "attendance_days": {
+      "type": "number",
+      "title": "\u51fa\u52e4\u5929\u6570(Attendance Days)",
+      "default": 0
+    },
+    "leave_hours": {
+      "type": "number",
+      "title": "\u8bf7\u5047\u5c0f\u65f6\u6570(Leave Hours)",
+      "default": 0
+    },
+    "overtime_hours": {
+      "type": "number",
+      "title": "\u52a0\u73ed\u5c0f\u65f6\u6570(Overtime Hours)",
+      "default": 0
+    },
+    "meal_subsidy_amount": {
+      "type": "number",
+      "title": "\u996d\u8865\u603b\u989d(Meal Subsidy)",
+      "default": 0
+    },
+    "leave_deduction": {
+      "type": "number",
+      "title": "\u8bf7\u5047\u6263\u6b3e(Leave Deduction)",
+      "default": 0
+    },
+    "overtime_bonus": {
+      "type": "number",
+      "title": "\u52a0\u73ed\u5956\u91d1(Overtime Bonus)",
+      "default": 0
+    },
+    "expected_salary": {
+      "type": "number",
+      "title": "\u5e94\u53d1\u5de5\u8d44(Expected Salary)",
+      "default": 0
+    },
+    "pay_period_start": {
+      "type": "string",
+      "title": "\u5468\u671f\u5f00\u59cb(Period Start)"
+    },
+    "pay_period_end": {
+      "type": "string",
+      "title": "\u5468\u671f\u7ed3\u675f(Period End)"
+    },
+    "status": {
+      "type": "string",
+      "title": "\u72b6\u6001(Status)",
+      "enum": [
+        "\u672a\u53d1\u653e",
+        "\u5df2\u53d1\u653e"
+      ],
+      "default": "\u672a\u53d1\u653e"
+    },
+    "paid_date": {
+      "type": "string",
+      "title": "\u53d1\u653e\u65e5\u671f(Paid Date)"
+    }
+  },
+  "required": [
+    "employee_id",
+    "employee_name"
+  ]
+}

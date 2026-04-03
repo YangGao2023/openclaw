@@ -1,0 +1,34 @@
+{
+  "name": "MeasurementAppointment",
+  "type": "object",
+  "properties": {
+    "client_name": {
+      "type": "string",
+      "title": "\u5ba2\u6237\u540d(Client)"
+    },
+    "client_id": {
+      "type": "string",
+      "title": "\u5ba2\u6237ID(Client ID)"
+    },
+    "phone": {
+      "type": "string",
+      "title": "\u7535\u8bdd(Phone)"
+    },
+    "address": {
+      "type": "string",
+      "title": "\u6d4b\u91cf\u5730\u5740(Address)"
+    },
+    "appointment_date": {
+      "type": "string",
+      "title": "\u9884\u7ea6\u65f6\u95f4(Date)"
+    },
+    "description": {
+      "type": "string",
+      "title": "\u63cf\u8ff0(Description)"
+    }
+  },
+  "required": [
+    "client_name",
+    "appointment_date"
+  ]
+}

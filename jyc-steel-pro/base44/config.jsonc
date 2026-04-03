@@ -1,0 +1,9 @@
+{
+  "name": "JYC STEEL Management",
+  "projectId": "69c947bb04b143683a9086ef",
+  "site": {
+    "dir": "./src",
+    "buildCommand": "npm run build",
+    "outputDirectory": "./dist"
+  }
+}

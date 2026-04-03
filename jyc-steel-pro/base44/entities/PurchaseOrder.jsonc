@@ -1,0 +1,85 @@
+{
+  "name": "PurchaseOrder",
+  "type": "object",
+  "properties": {
+    "po_number": {
+      "type": "string",
+      "title": "PO\u5355\u53f7(PO Number)"
+    },
+    "supplier_id": {
+      "type": "string",
+      "title": "\u4f9b\u5e94\u5546ID(Supplier ID)"
+    },
+    "supplier_name": {
+      "type": "string",
+      "title": "\u4f9b\u5e94\u5546\u540d\u79f0(Supplier Name)"
+    },
+    "order_date": {
+      "type": "string",
+      "title": "\u65e5\u671f(Date)"
+    },
+    "items": {
+      "type": "array",
+      "title": "\u7269\u6599\u6e05\u5355(Items)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "material_id": {
+            "type": "string"
+          },
+          "material_name": {
+            "type": "string"
+          },
+          "specification": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "unit_price": {
+            "type": "number"
+          },
+          "subtotal": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "total_amount": {
+      "type": "number",
+      "title": "\u603b\u91d1\u989d(Total)",
+      "default": 0
+    },
+    "payment_status": {
+      "type": "string",
+      "title": "\u4ed8\u6b3e\u72b6\u6001(Payment Status)",
+      "enum": [
+        "\u672a\u4ed8\u6b3e",
+        "\u90e8\u5206\u4ed8\u6b3e",
+        "\u5df2\u4ed8\u6b3e"
+      ],
+      "default": "\u672a\u4ed8\u6b3e"
+    },
+    "amount_paid": {
+      "type": "number",
+      "title": "\u5df2\u4ed8\u91d1\u989d(Amount Paid)",
+      "default": 0
+    },
+    "expense_id": {
+      "type": "string",
+      "title": "\u5173\u8054\u652f\u51faID(Expense ID)"
+    },
+    "remark": {
+      "type": "string",
+      "title": "\u5907\u6ce8(Remark)"
+    }
+  },
+  "required": [
+    "po_number",
+    "supplier_name",
+    "order_date"
+  ]
+}

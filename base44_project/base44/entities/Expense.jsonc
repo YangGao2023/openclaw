@@ -1,0 +1,59 @@
+{
+  "name": "Expense",
+  "type": "object",
+  "properties": {
+    "target": {
+      "type": "string",
+      "title": "\u5bf9\u8c61(Target)"
+    },
+    "detail": {
+      "type": "string",
+      "title": "\u660e\u7ec6(Detail)"
+    },
+    "amount": {
+      "type": "number",
+      "title": "\u91d1\u989d(Amount)",
+      "default": 0
+    },
+    "expense_type": {
+      "type": "string",
+      "title": "\u7c7b\u578b(Type)"
+    },
+    "payment_method": {
+      "type": "string",
+      "title": "\u5f62\u5f0f(Method)",
+      "enum": [
+        "\u73b0\u91d1",
+        "\u652f\u7968",
+        "\u8f6c\u8d26",
+        "\u5237\u5361"
+      ],
+      "default": "\u73b0\u91d1"
+    },
+    "expense_date": {
+      "type": "string",
+      "title": "\u65e5\u671f(Date)"
+    },
+    "is_office": {
+      "type": "boolean",
+      "title": "\u529e\u516c\u5ba4\u652f\u51fa(Office)",
+      "default": false
+    },
+    "office_cash_id": {
+      "type": "string",
+      "title": "\u529e\u516c\u5ba4\u73b0\u91d1\u8bb0\u5f55ID(Office Cash ID)"
+    },
+    "related_order": {
+      "type": "string",
+      "title": "\u5173\u8054\u8ba2\u5355(Related Order)"
+    },
+    "remark": {
+      "type": "string",
+      "title": "\u5907\u6ce8(Remark)"
+    }
+  },
+  "required": [
+    "amount",
+    "expense_type"
+  ]
+}

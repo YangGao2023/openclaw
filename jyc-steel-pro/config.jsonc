@@ -1,0 +1,14 @@
+{
+  "projectId": "69c947bb04b143683a9086ef",
+  "name": "JYC STEEL Management",
+  "description": "正豪铁艺 (JYC STEEL) - 龙虾部门管理系统",
+  "entities": {
+    "dir": "./base44/entities"
+  },
+  "functions": {
+    "dir": "./base44/functions"
+  },
+  "site": {
+    "dir": "./src"
+  }
+}

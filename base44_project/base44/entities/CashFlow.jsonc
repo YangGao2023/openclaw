@@ -1,0 +1,45 @@
+{
+  "name": "CashFlow",
+  "type": "object",
+  "properties": {
+    "flow_type": {
+      "type": "string",
+      "title": "\u7c7b\u578b(Type)",
+      "enum": [
+        "\u8f6c\u5165",
+        "\u8f6c\u51fa"
+      ],
+      "default": "\u8f6c\u5165"
+    },
+    "amount": {
+      "type": "number",
+      "title": "\u91d1\u989d(Amount)",
+      "default": 0
+    },
+    "flow_date": {
+      "type": "string",
+      "title": "\u65e5\u671f(Date)"
+    },
+    "source_type": {
+      "type": "string",
+      "title": "\u6765\u6e90\u7c7b\u578b(Source Type)",
+      "enum": [
+        "\u8ba2\u5355\u6536\u5165",
+        "\u652f\u51fa\u9000\u6b3e"
+      ]
+    },
+    "source_id": {
+      "type": "string",
+      "title": "\u6765\u6e90ID(Source ID)"
+    },
+    "remark": {
+      "type": "string",
+      "title": "\u5907\u6ce8(Remark)"
+    }
+  },
+  "required": [
+    "flow_type",
+    "amount",
+    "flow_date"
+  ]
+}

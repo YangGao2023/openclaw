@@ -1,0 +1,65 @@
+{
+  "name": "Attendance",
+  "type": "object",
+  "properties": {
+    "employee_id": {
+      "type": "string",
+      "title": "\u5de5\u53f7(Employee ID)"
+    },
+    "employee_name": {
+      "type": "string",
+      "title": "\u59d3\u540d(Name)"
+    },
+    "attendance_date": {
+      "type": "string",
+      "title": "\u65e5\u671f(Date)"
+    },
+    "check_in_time": {
+      "type": "string",
+      "title": "\u4e0a\u73ed\u65f6\u95f4(Check In)"
+    },
+    "check_out_time": {
+      "type": "string",
+      "title": "\u4e0b\u73ed\u65f6\u95f4(Check Out)"
+    },
+    "work_hours": {
+      "type": "number",
+      "title": "\u5de5\u4f5c\u5c0f\u65f6(Work Hours)",
+      "default": 0
+    },
+    "leave_hours": {
+      "type": "number",
+      "title": "\u8bf7\u5047\u5c0f\u65f6(Leave Hours)",
+      "default": 0
+    },
+    "overtime_hours": {
+      "type": "number",
+      "title": "\u52a0\u73ed\u5c0f\u65f6(Overtime Hours)",
+      "default": 0
+    },
+    "meal_subsidy": {
+      "type": "boolean",
+      "title": "\u996d\u8865(Meal Subsidy)",
+      "default": true
+    },
+    "meal_amount": {
+      "type": "number",
+      "title": "\u996d\u8865\u91d1\u989d(Meal Amount)",
+      "default": 0
+    },
+    "daily_wage": {
+      "type": "number",
+      "title": "\u5f53\u65e5\u5de5\u8d44(Daily Wage)",
+      "default": 0
+    },
+    "remark": {
+      "type": "string",
+      "title": "\u5907\u6ce8(Remark)"
+    }
+  },
+  "required": [
+    "employee_id",
+    "employee_name",
+    "attendance_date"
+  ]
+}

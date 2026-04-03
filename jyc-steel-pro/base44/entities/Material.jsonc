@@ -1,0 +1,105 @@
+{
+  "name": "Material",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "title": "\u7f16\u53f7(Code)"
+    },
+    "name": {
+      "type": "string",
+      "title": "\u540d\u79f0(Name)"
+    },
+    "category": {
+      "type": "string",
+      "title": "\u7c7b\u522b(Category)"
+    },
+    "image": {
+      "type": "string",
+      "title": "\u56fe\u7247(Image)",
+      "format": "image"
+    },
+    "weight": {
+      "type": "number",
+      "title": "\u5355\u91cd(Weight/KG)"
+    },
+    "size": {
+      "type": "string",
+      "title": "\u5c3a\u5bf8(Size)"
+    },
+    "specification": {
+      "type": "string",
+      "title": "\u89c4\u683c(Spec)"
+    },
+    "color": {
+      "type": "string",
+      "title": "\u989c\u8272(Color)"
+    },
+    "material_type": {
+      "type": "string",
+      "title": "\u6750\u6599(Material)"
+    },
+    "unit": {
+      "type": "string",
+      "title": "\u8ba1\u91cf\u5355\u4f4d(Unit)",
+      "enum": [
+        "\u4e2a",
+        "\u5c3a",
+        "\u5bf8",
+        "\u4ef6",
+        "\u5957",
+        "\u7c73",
+        "\u6839",
+        "\u5f20",
+        "kg"
+      ],
+      "default": "\u4e2a"
+    },
+    "stock_quantity": {
+      "type": "number",
+      "title": "\u5e93\u5b58\u91cf(Stock)",
+      "default": 0
+    },
+    "stock_unit": {
+      "type": "string",
+      "title": "\u5e93\u5b58\u5355\u4f4d(Unit)",
+      "default": "\u4e2a"
+    },
+    "factory_price": {
+      "type": "number",
+      "title": "\u51fa\u5382\u4ef7(\u00a5)",
+      "default": 0
+    },
+    "purchase_price": {
+      "type": "number",
+      "title": "\u4e70\u5165\u4ef7($)",
+      "default": 0
+    },
+    "selling_price": {
+      "type": "number",
+      "title": "\u5356\u51fa\u4ef7($)",
+      "default": 0
+    },
+    "wholesale_price": {
+      "type": "number",
+      "title": "\u6279\u53d1\u5355\u4ef7($)",
+      "default": 0
+    },
+    "supplier": {
+      "type": "string",
+      "title": "\u4f9b\u5e94\u5546(Supplier)"
+    },
+    "supplier_id": {
+      "type": "string",
+      "title": "\u4f9b\u5e94\u5546ID(Supplier ID)"
+    },
+    "remark": {
+      "type": "string",
+      "title": "\u5907\u6ce8(Remark)"
+    }
+  },
+  "required": [
+    "code",
+    "name"
+  ]
+}

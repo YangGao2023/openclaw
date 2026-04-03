@@ -1,0 +1,76 @@
+{
+  "name": "Employee",
+  "type": "object",
+  "properties": {
+    "employee_id": {
+      "type": "string",
+      "title": "\u5de5\u53f7(ID)"
+    },
+    "name": {
+      "type": "string",
+      "title": "\u59d3\u540d(Name)"
+    },
+    "position": {
+      "type": "string",
+      "title": "\u804c\u4f4d(Position)"
+    },
+    "contact": {
+      "type": "string",
+      "title": "\u8054\u7cfb\u65b9\u5f0f(Contact)"
+    },
+    "hire_date": {
+      "type": "string",
+      "title": "\u5165\u804c\u65e5\u671f(Hire Date)"
+    },
+    "work_schedule": {
+      "type": "array",
+      "title": "\u5de5\u4f5c\u65e5\u7a0b(Work Schedule)",
+      "items": {
+        "type": "number"
+      },
+      "description": "0=Sunday, 1-6=Monday-Saturday"
+    },
+    "hourly_rate": {
+      "type": "number",
+      "title": "\u65f6\u85aa(Hourly Rate)",
+      "default": 0
+    },
+    "daily_rate": {
+      "type": "number",
+      "title": "\u65e5\u85aa(Daily Rate)",
+      "default": 0
+    },
+    "meal_allowance": {
+      "type": "boolean",
+      "title": "\u4eab\u53d7\u996d\u8865(Meal Allowance)",
+      "default": true
+    },
+    "meal_allowance_amount": {
+      "type": "number",
+      "title": "\u996d\u8865\u6807\u51c6$/\u5929(Meal $)",
+      "default": 0
+    },
+    "is_mexican": {
+      "type": "boolean",
+      "title": "\u58a8\u897f\u54e5\u5458\u5de5(Mexican)",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "title": "\u72b6\u6001(Status)",
+      "enum": [
+        "\u5728\u804c",
+        "\u79bb\u804c"
+      ],
+      "default": "\u5728\u804c"
+    },
+    "remark": {
+      "type": "string",
+      "title": "\u5907\u6ce8(Remark)"
+    }
+  },
+  "required": [
+    "employee_id",
+    "name"
+  ]
+}

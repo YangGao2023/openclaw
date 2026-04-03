@@ -1,0 +1,18 @@
+{
+  "name": "Settings",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "title": "\u952e(Key)"
+    },
+    "value": {
+      "type": "string",
+      "title": "\u503c(Value)"
+    }
+  },
+  "required": [
+    "key",
+    "value"
+  ]
+}

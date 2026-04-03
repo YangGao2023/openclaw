@@ -1,0 +1,65 @@
+{
+  "name": "Client",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "\u540d\u79f0(Name)"
+    },
+    "type": {
+      "type": "string",
+      "title": "\u7c7b\u522b(Type)",
+      "enum": [
+        "\u5ba2\u6237",
+        "\u4f9b\u5e94\u5546",
+        "\u5ba2\u6237/\u4f9b\u5e94\u5546"
+      ],
+      "default": "\u5ba2\u6237"
+    },
+    "contact": {
+      "type": "string",
+      "title": "\u8054\u7cfb\u65b9\u5f0f(Contact)"
+    },
+    "email": {
+      "type": "string",
+      "title": "\u90ae\u7bb1(Email)"
+    },
+    "address": {
+      "type": "string",
+      "title": "\u5730\u5740(Address)"
+    },
+    "organization_code": {
+      "type": "string",
+      "title": "\u7ec4\u7ec7\u4ee3\u53f7(Org Code)"
+    },
+    "bank_card_number": {
+      "type": "string",
+      "title": "\u94f6\u884c\u5361\u53f7(Bank Card)"
+    },
+    "bank_card_expiry": {
+      "type": "string",
+      "title": "\u94f6\u884c\u5361\u8fc7\u671f\u65e5\u671f(Bank Card Expiry)"
+    },
+    "credit_card_number": {
+      "type": "string",
+      "title": "\u4fe1\u7528\u5361\u53f7(Credit Card)"
+    },
+    "credit_card_expiry": {
+      "type": "string",
+      "title": "\u4fe1\u7528\u5361\u8fc7\u671f\u65e5\u671f(Credit Card Expiry)"
+    },
+    "balance": {
+      "type": "number",
+      "title": "\u8d26\u6237\u4f59\u989d(Balance)",
+      "default": 0
+    },
+    "remark": {
+      "type": "string",
+      "title": "\u5907\u6ce8(Remark)"
+    }
+  },
+  "required": [
+    "name",
+    "type"
+  ]
+}

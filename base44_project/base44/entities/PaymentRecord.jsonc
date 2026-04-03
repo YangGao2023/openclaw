@@ -1,0 +1,64 @@
+{
+  "name": "PaymentRecord",
+  "type": "object",
+  "properties": {
+    "order_id": {
+      "type": "string",
+      "title": "\u8ba2\u5355ID(Order ID)"
+    },
+    "order_number": {
+      "type": "string",
+      "title": "\u8ba2\u5355\u53f7(Order Number)"
+    },
+    "type": {
+      "type": "string",
+      "title": "\u7c7b\u578b(Type)",
+      "enum": [
+        "\u6536\u6b3e",
+        "\u9000\u6b3e"
+      ],
+      "default": "\u6536\u6b3e"
+    },
+    "amount": {
+      "type": "number",
+      "title": "\u91d1\u989d(Amount)",
+      "default": 0
+    },
+    "payment_method": {
+      "type": "string",
+      "title": "\u652f\u4ed8\u65b9\u5f0f(Payment Method)",
+      "enum": [
+        "\u73b0\u91d1",
+        "\u652f\u7968",
+        "\u8f6c\u8d26",
+        "\u5237\u5361"
+      ]
+    },
+    "detail": {
+      "type": "string",
+      "title": "\u660e\u7ec6(Detail)"
+    },
+    "payment_date": {
+      "type": "string",
+      "title": "\u65e5\u671f(Date)"
+    },
+    "description": {
+      "type": "string",
+      "title": "\u63cf\u8ff0(Description)"
+    },
+    "is_office": {
+      "type": "boolean",
+      "title": "\u5b58\u5165\u529e\u516c\u5ba4(Office)",
+      "default": false
+    },
+    "office_cash_id": {
+      "type": "string",
+      "title": "\u529e\u516c\u5ba4\u73b0\u91d1\u8bb0\u5f55ID(Office Cash ID)"
+    }
+  },
+  "required": [
+    "order_id",
+    "type",
+    "amount"
+  ]
+}

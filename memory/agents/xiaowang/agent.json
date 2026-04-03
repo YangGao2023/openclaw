@@ -1,0 +1,12 @@
+{
+  "id": "xiaowang",
+  "name": "5号 小网",
+  "role": "网页制作工程师",
+  "description": "负责 Base44 平台对接与正豪铁艺官网搭建。",
+  "identityPath": "memory/agents/xiaowang/IDENTITY.md",
+  "soulPath": "memory/agents/xiaowang/SOUL.md",
+  "telegram": {
+    "account": "default",
+    "handle": "@Jycsteel_bot"
+  }
+}

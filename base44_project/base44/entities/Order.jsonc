@@ -1,0 +1,235 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "order_number": {
+      "type": "string",
+      "title": "\u8ba2\u5355\u53f7(Order Number)"
+    },
+    "order_type": {
+      "type": "string",
+      "title": "\u8ba2\u5355\u7c7b\u578b(Type)",
+      "enum": [
+        "\u5b9a\u5236\u5355",
+        "\u6279\u53d1\u5355"
+      ],
+      "default": "\u5b9a\u5236\u5355"
+    },
+    "client_name": {
+      "type": "string",
+      "title": "\u5ba2\u6237\u540d\u79f0(Customer)"
+    },
+    "client_id": {
+      "type": "string",
+      "title": "\u5ba2\u6237ID(Client ID)"
+    },
+    "phone": {
+      "type": "string",
+      "title": "\u7535\u8bdd(Phone)"
+    },
+    "address": {
+      "type": "string",
+      "title": "\u5730\u5740(Address)"
+    },
+    "description": {
+      "type": "string",
+      "title": "\u63cf\u8ff0(Description)"
+    },
+    "image": {
+      "type": "string",
+      "title": "\u56fe\u7247(Image)",
+      "format": "image"
+    },
+    "image_urls": {
+      "type": "array",
+      "title": "\u56fe\u7247\u5217\u8868(Image URLs)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "project_images": {
+      "type": "array",
+      "title": "\u5b8c\u5de5\u7167(Project Images)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "total_price": {
+      "type": "number",
+      "title": "\u603b\u4ef7(Total Price)",
+      "default": 0
+    },
+    "deposit": {
+      "type": "number",
+      "title": "\u5b9a\u91d1(Deposit)",
+      "default": 0
+    },
+    "amount_paid": {
+      "type": "number",
+      "title": "\u5df2\u4ed8\u91d1\u989d(Amount Paid)",
+      "default": 0
+    },
+    "balance": {
+      "type": "number",
+      "title": "\u4f59\u6b3e(Balance)",
+      "default": 0
+    },
+    "payment_method": {
+      "type": "string",
+      "title": "\u652f\u4ed8\u65b9\u5f0f(Payment Method)",
+      "enum": [
+        "\u73b0\u91d1",
+        "\u652f\u7968",
+        "\u8f6c\u8d26",
+        "\u5237\u5361"
+      ],
+      "default": "\u73b0\u91d1"
+    },
+    "is_office": {
+      "type": "boolean",
+      "title": "\u529e\u516c\u5ba4(Office)",
+      "default": false
+    },
+    "tax_rate": {
+      "type": "number",
+      "title": "\u7a0e\u7387(Tax %)",
+      "default": 0
+    },
+    "total_after_tax": {
+      "type": "number",
+      "title": "\u7a0e\u540e\u603b\u91d1\u989d(Total After Tax)",
+      "default": 0
+    },
+    "item_count": {
+      "type": "number",
+      "title": "\u603b\u4ef6\u6570(Item Count)",
+      "default": 0
+    },
+    "order_date": {
+      "type": "string",
+      "title": "\u4e0b\u5355\u65e5\u671f(Order Date)"
+    },
+    "status": {
+      "type": "string",
+      "title": "\u72b6\u6001(Status)",
+      "enum": [
+        "\u4e0b\u5355",
+        "\u751f\u4ea7\u4e2d",
+        "\u7ed3\u6e05",
+        "\u672a\u4ed8\u6e05",
+        "\u5df2\u5173\u95ed"
+      ],
+      "default": "\u4e0b\u5355"
+    },
+    "installation_status": {
+      "type": "string",
+      "title": "\u5b89\u88c5\u72b6\u6001(Installation Status)",
+      "enum": [
+        "\u5f85\u751f\u4ea7",
+        "\u751f\u4ea7\u4e2d",
+        "\u5f85\u5b89\u88c5",
+        "\u5df2\u5b89\u88c5"
+      ],
+      "default": "\u5f85\u751f\u4ea7"
+    },
+    "shipment_status": {
+      "type": "string",
+      "title": "\u53d1\u8d27\u72b6\u6001(Shipment Status)",
+      "enum": [
+        "\u5f85\u5907\u8d27",
+        "\u5f85\u53d1\u8d27",
+        "\u5df2\u53d1\u8d27",
+        "\u5df2\u7b7e\u6536"
+      ],
+      "default": "\u5f85\u5907\u8d27"
+    },
+    "shipped_date": {
+      "type": "string",
+      "title": "\u53d1\u8d27\u65e5\u671f(Shipped Date)"
+    },
+    "install_personnel": {
+      "type": "string",
+      "title": "\u5b89\u88c5\u4eba\u5458(Install Personnel)"
+    },
+    "install_date": {
+      "type": "string",
+      "title": "\u5b89\u88c5\u65e5\u671f(Install Date)"
+    },
+    "install_address": {
+      "type": "string",
+      "title": "\u5b89\u88c5\u5730\u5740(Install Address)"
+    },
+    "install_remark": {
+      "type": "string",
+      "title": "\u5b89\u88c5\u5907\u6ce8(Install Remark)"
+    },
+    "operation_type": {
+      "type": "string",
+      "title": "\u64cd\u4f5c\u7c7b\u578b(Operation)",
+      "enum": [
+        "\u552e\u8d27",
+        "\u9000\u8d27"
+      ],
+      "default": "\u552e\u8d27"
+    },
+    "order_items": {
+      "type": "array",
+      "title": "\u8ba2\u5355\u7269\u6599(Items)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "material_code": {
+            "type": "string"
+          },
+          "material_name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "number"
+          },
+          "size": {
+            "type": "string"
+          },
+          "specification": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "material_type": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "unit_price": {
+            "type": "number"
+          },
+          "wholesale_price": {
+            "type": "number"
+          },
+          "wholesale_quantity": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "discount": {
+      "type": "number",
+      "title": "\u6298\u6263\u91d1\u989d(Discount $)",
+      "default": 0
+    },
+    "remark": {
+      "type": "string",
+      "title": "\u5907\u6ce8(Remark)"
+    }
+  },
+  "required": [
+    "order_number",
+    "order_type",
+    "client_name"
+  ]
+}

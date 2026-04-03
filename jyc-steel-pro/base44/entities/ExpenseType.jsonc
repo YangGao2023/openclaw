@@ -1,0 +1,18 @@
+{
+  "name": "ExpenseType",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "\u7c7b\u578b\u540d\u79f0(Name)"
+    },
+    "sort_order": {
+      "type": "number",
+      "title": "\u6392\u5e8f(Sort)",
+      "default": 0
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
