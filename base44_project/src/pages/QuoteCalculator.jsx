@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Calculator, Plus, Trash2, Receipt, Scale } from "lucide-react";
+import { Calculator, Plus, Minus, Trash2, Receipt, Scale } from "lucide-react";
 import { toast } from "sonner";
 
 export default function QuoteCalculator() {
@@ -21,7 +21,7 @@ export default function QuoteCalculator() {
     queryFn: () => base44.entities.Material.list(),
   });
 
-  // 添加物料到计算清单
+  // 添加物料到计算清单 (加号逻辑)
   const addItem = (material) => {
     setSelectedItems((prev) => {
       const exists = prev.find((i) => i.id === material.id);
@@ -34,7 +34,20 @@ export default function QuoteCalculator() {
     });
   };
 
-  // 移除物料
+  // 减少物料数量 (减号逻辑)
+  const decreaseQuantity = (id) => {
+    setSelectedItems((prev) => {
+      const item = prev.find((i) => i.id === id);
+      if (item && item.quantity > 1) {
+        return prev.map((i) =>
+          i.id === id ? { ...i, quantity: i.quantity - 1 } : i
+        );
+      }
+      return prev.filter((i) => i.id !== id);
+    });
+  };
+
+  // 彻底移除物料
   const removeItem = (id) => {
     setSelectedItems((prev) => prev.filter((i) => i.id !== id));
   };
@@ -49,7 +62,6 @@ export default function QuoteCalculator() {
   // 计算总成本
   const totals = useMemo(() => {
     const materialCost = selectedItems.reduce((sum, item) => {
-      // 优先使用尺/寸逻辑，否则按个算
       const price = item.unit_type === "尺" || item.unit_type === "寸" 
         ? (item.selling_price / (item.length_per_unit || 1)) 
         : (item.selling_price || 0);
@@ -68,7 +80,6 @@ export default function QuoteCalculator() {
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* 左侧：物料选择区 */}
         <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -99,7 +110,6 @@ export default function QuoteCalculator() {
           </CardContent>
         </Card>
 
-        {/* 右侧：计算中枢 */}
         <div className="space-y-6">
           <Card className="border-primary/20 shadow-lg">
             <CardHeader className="bg-primary/5">
@@ -143,7 +153,6 @@ export default function QuoteCalculator() {
             </CardContent>
           </Card>
 
-          {/* 已选清单 */}
           <Card>
             <CardHeader>
               <CardTitle className="text-sm">已选清单 ({selectedItems.length})</CardTitle>
@@ -162,12 +171,30 @@ export default function QuoteCalculator() {
                     <TableRow key={item.id}>
                       <TableCell className="text-xs font-medium py-2">{item.name}</TableCell>
                       <TableCell className="py-2">
-                        <Input 
-                          type="number" 
-                          className="h-7 w-16 text-xs px-1" 
-                          value={item.quantity}
-                          onChange={(e) => updateQuantity(item.id, e.target.value)}
-                        />
+                        <div className="flex items-center gap-1">
+                          <Button 
+                            variant="outline" 
+                            size="icon" 
+                            className="h-6 w-6" 
+                            onClick={() => decreaseQuantity(item.id)}
+                          >
+                            <Minus className="h-3 w-3" />
+                          </Button>
+                          <Input 
+                            type="number" 
+                            className="h-7 w-12 text-xs px-1 text-center" 
+                            value={item.quantity}
+                            onChange={(e) => updateQuantity(item.id, e.target.value)}
+                          />
+                          <Button 
+                            variant="outline" 
+                            size="icon" 
+                            className="h-6 w-6" 
+                            onClick={() => addItem(item)}
+                          >
+                            <Plus className="h-3 w-3" />
+                          </Button>
+                        </div>
                       </TableCell>
                       <TableCell className="text-right py-2">
                         <Button variant="ghost" size="icon" className="h-7 w-7 text-destructive" onClick={() => removeItem(item.id)}>
